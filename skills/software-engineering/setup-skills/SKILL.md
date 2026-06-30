@@ -4,6 +4,8 @@ description: Configure a repo for the engineering skills — set up its issue tr
 tags: [engineering, setup, configuration]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Setup Skills

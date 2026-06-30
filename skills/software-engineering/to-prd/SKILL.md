@@ -4,6 +4,8 @@ description: Turn the current conversation into a PRD and publish it to the proj
 tags: [engineering, planning, documentation]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # To PRD

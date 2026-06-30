@@ -3,6 +3,8 @@ name: domain-modeling
 description: Build and sharpen a project's domain model. Use when the user wants to pin down domain terminology, establish a ubiquitous language, record an architectural decision, or when another skill needs to update CONTEXT.md or create ADRs.
 tags: [engineering, domain, documentation]
 audience: Software engineers and developers using Claude Code
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Domain Modeling

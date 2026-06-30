@@ -4,6 +4,8 @@ description: Build a throwaway prototype to answer a design question — a runna
 tags: [engineering, prototyping, design]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Prototype

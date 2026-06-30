@@ -4,6 +4,8 @@ description: Break a plan, spec, or PRD into independently-grabbable issues on t
 tags: [engineering, planning, workflow]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # To Issues

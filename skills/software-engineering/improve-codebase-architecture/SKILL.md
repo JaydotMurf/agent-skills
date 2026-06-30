@@ -4,6 +4,8 @@ description: Scan a codebase for deepening opportunities, present them as a visu
 tags: [engineering, architecture, refactoring]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Improve Codebase Architecture

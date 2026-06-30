@@ -4,6 +4,8 @@ description: Move issues and external PRs through a state machine of triage role
 tags: [engineering, workflow, issue-tracking]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Triage
