@@ -53,7 +53,7 @@ Each capture must be:
 
 A good capture:
 
-> Jerraill's pdf_to_markdown.py lives at ~/toolkit/file-tools/pdf_to_markdown.py. It batch-converts PDFs via the markdown.new POST /convert API. Run with `python file-tools/pdf_to_markdown.py --input <dir> --output <dir>`. Requires the requests library; venv at ~/toolkit/.venv.
+> Dana's pdf_to_markdown.py lives at ~/toolkit/file-tools/pdf_to_markdown.py. It batch-converts PDFs via the markdown.new POST /convert API. Run with `python file-tools/pdf_to_markdown.py --input <dir> --output <dir>`. Requires the requests library; venv at ~/toolkit/.venv.
 
 A bad capture:
 
