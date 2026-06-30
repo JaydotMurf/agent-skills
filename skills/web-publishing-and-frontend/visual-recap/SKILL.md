@@ -6,6 +6,10 @@ description: >-
   notes.
 metadata:
   visibility: exported
+tags: [review, visualization, html]
+audience: Software engineers and developers using Claude Code
+source: agent-native
+standard: upstream-vendored
 ---
 
 ## Installed Mode
