@@ -3,6 +3,8 @@ name: grilling
 description: Interview the user relentlessly about a plan or design. Use when the user wants to stress-test a plan before building, mentions "grill", "stress-test my plan", "poke holes in this", or when another skill needs a structured design interview.
 tags: [productivity, design, interview]
 audience: Software engineers and developers using Claude Code
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Grilling

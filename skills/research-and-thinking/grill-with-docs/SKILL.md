@@ -4,6 +4,8 @@ description: A relentless codebase-aware interview that sharpens a plan or desig
 tags: [engineering, design, documentation]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Grill With Docs

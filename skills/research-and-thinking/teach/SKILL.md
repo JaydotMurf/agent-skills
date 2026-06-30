@@ -4,6 +4,8 @@ description: Teach the user a new skill or concept, within this workspace, over 
 tags: [productivity, learning, education]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Teach

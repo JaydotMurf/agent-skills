@@ -4,6 +4,8 @@ description: A relentless interview to sharpen a plan or design. Use when the us
 tags: [productivity, design, interview]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Grill Me
