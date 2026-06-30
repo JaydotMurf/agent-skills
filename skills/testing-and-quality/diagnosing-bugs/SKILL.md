@@ -3,6 +3,8 @@ name: diagnosing-bugs
 description: Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose", "debug this", or reports something broken, throwing, failing, or slow.
 tags: [engineering, debugging, testing]
 audience: Software engineers and developers using Claude Code
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Diagnosing Bugs

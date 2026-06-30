@@ -3,6 +3,8 @@ name: tdd
 description: Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", "TDD", "write tests first", or wants integration tests written before implementation.
 tags: [engineering, testing, workflow]
 audience: Software engineers and developers using Claude Code
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Test-Driven Development

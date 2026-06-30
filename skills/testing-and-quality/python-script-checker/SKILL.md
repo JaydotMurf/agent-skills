@@ -12,4 +12,6 @@ allowed-tools:
   - Write
 context: fork
 status: coming-soon
+tags: [python, testing, compliance]
+audience: Software engineers and developers using Claude Code
 ---
