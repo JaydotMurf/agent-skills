@@ -4,6 +4,8 @@ description: Reference for writing and editing skills well — the vocabulary an
 tags: [productivity, skills, authoring]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Writing Great Skills

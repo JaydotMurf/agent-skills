@@ -4,6 +4,8 @@ description: Ask which skill or flow fits your situation. A router over the user
 tags: [productivity, workflow, navigation]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Ask Workflow

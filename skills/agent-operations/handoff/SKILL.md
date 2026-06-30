@@ -4,6 +4,8 @@ description: Compact the current conversation into a handoff document for anothe
 tags: [productivity, workflow, sessions]
 audience: Software engineers and developers using Claude Code
 disable-model-invocation: true
+source: mattpocock
+standard: upstream-vendored
 ---
 
 # Handoff

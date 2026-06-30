@@ -2,6 +2,8 @@
 name: starting-project-session
 description: Loads project context at the start of a fresh coding agent session by reading implementation plans and design docs, confirming the current phase, next step, and files to touch — then waiting for explicit go-ahead before taking any action. Use at the top of any session where prior context may have been lost, when the user says "pick up where we left off", "fresh session", "load context", "what's next", "resume the build", "let's get started on the project", or explicitly runs /init. Always trigger before any coding or editing begins.
 allowed-tools: Read
+tags: [productivity, workflow, sessions]
+audience: Software engineers and developers using Claude Code
 ---
 
 # Starting a Project Session
