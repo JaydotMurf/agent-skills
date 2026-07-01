@@ -365,13 +365,26 @@ Status legend: ✅ complete and verified. Verification method is noted because s
 - ✅ Continuous integration stood up: `scripts/check.sh` plus `.github/workflows/ci.yml` run on every push and PR — shell/Python/JSON syntax, the six-element check for native skills, vendored provenance integrity, runbook-reference resolution, and the writing-rule lint. Verified green on main (39 native skills, 19 vendored, 35 runbook references, 45 procedures). Documented in CONTRIBUTING.md.
 - ✅ Open Brain capture upgraded: the proactive, technically richer `context-to-open-brain` supersedes the user-invoked `open-brain-capture` as the single canonical capture skill (richer categories — repo structure, scripts, env vars, APIs, conventions — third-person voice, and proactive session-end triggering), built to the six-element standard and lint-clean. The superseded skill was removed to avoid drift.
 
+### Live paid-path validation (2026-07-01)
+
+All API-backed skills with a key present were validated against real endpoints for the first time, staying under a ~$15–20 ceiling for about $0.44 total. Each touched `SKILL.md` now carries a dated evidence line with real cost and confirmed output shape.
+
+- ✅ current-info-search — live re-confirmed at $0.00525/query, and a real bug was fixed: the recorded `/v1/sonar` endpoint throws an HTTP/2 framing error, so `search.sh` was switched to the documented `/chat/completions` and now prints real `usage.cost.total_cost`.
+- ✅ media-transcription — a 25-second two-topic clip produced the full four-artifact package (65 words, one auto-chapter) for well under a cent.
+- ✅ image-gateway — default model at $0.0387657, and the PR #12 `IMAGE_GATEWAY_MODEL` override proven live by routing the same call to `google/gemini-3-pro-image` ($0.13616); the different model id and cost confirm the env var drives selection.
+- ✅ image-model-arena — a two-model composer run recorded per-image cost to `registry.json`; caveat logged that the example config's `flux-1.1-pro` is not an image-output model on OpenRouter today.
+- ✅ essay-illustration-gallery — a two-frame composer run produced a self-contained HTML with base64 images and zero external references, style descriptor locked across frames.
+- ✅ stakeholder-update-email — `--reply-to` was added (the header had long claimed it but the code never sent it) and a live send via the Resend sandbox sender returned a message id; sandbox delivery is limited to the account's own email until a custom domain is verified.
+
+The remaining deferred paths are hardware and render dependent (radio-edit, broll-pipeline, nle-assistant) and the Remotion typecheck, all tracked below.
+
 ---
 
 ## 5. Work In Progress
 
 Ordered for a safe, methodical workflow: validate paid and hardware paths, then build the quality-test system, then take on the larger phase-2 build, and finish with the public README. The correctness, hygiene, and CI items are done (see Work Completed).
 
-1. Live-validate the deferred paid paths, recording real cost and output shape in each `SKILL.md`. Active as of 2026-07-01: keys for OpenRouter, Perplexity, and AssemblyAI are present in `~/.config/agent-skills/.env` and a ~$15–20 spend ceiling is approved, so the block is lifted for cheapest-first validation — a current-info-search live re-confirm, a media-transcription short clip, an image-gateway generation on the default model plus a second model to exercise `IMAGE_GATEWAY_MODEL`, then small real runs of the image-model-arena and essay-illustration-gallery composers. The Resend live send (stakeholder-update-email) is unblocked once a `STAKEHOLDER_UPDATE_EMAIL_API_KEY` is added.
+1. Paid-path validation is done for every key-present skill (see the Work Completed subsection above): search, transcription, image-gateway plus the model override, both image composers, and a Resend sandbox send are all live-validated with dated cost recorded. The only remaining piece here is a Resend custom-domain verification, which would let stakeholder-update-email send beyond the account's own inbox; it is optional and blocked on owning and verifying a domain.
 2. Build the tiered quality-test system (Tier 1 deterministic CI gate over every skill, Tier 2 budget-gated LLM-judge evals for the highest-value skills and all 7 runbooks, Tier 3 the live-path verification ledger fed by item 1). See the Work Completed subsection once it lands.
 3. Live-validate the hardware and render paths: a radio-edit EDL imported into an NLE, a broll-pipeline end-to-end render, and an nle-assistant round-trip against DaVinci Resolve Studio. Blocked on local media hardware and toolchains.
 4. Add a Remotion typecheck for `broll-pipeline/index.ts` and the `.tsx` set, which are not type-checked in this repo today (no Remotion toolchain present); wire it into CI once the toolchain is available.
