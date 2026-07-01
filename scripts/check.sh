@@ -123,7 +123,9 @@ note "checked $n procedure files"
 # --- 8. manifest freshness (scripts/skills-index.json is current) ---
 section 8 "skills-index.json is up to date"
 if [ -f scripts/skills-index.json ]; then
-  if diff -q <(bash scripts/gen-index.sh) scripts/skills-index.json >/dev/null 2>&1; then
+  # compare content, not byte formatting, so jq version differences across
+  # machines (macOS vs CI) never produce a false "stale".
+  if [ "$(bash scripts/gen-index.sh | jq -S .)" = "$(jq -S . scripts/skills-index.json)" ]; then
     note "manifest matches a fresh generation"
   else
     note "STALE: scripts/skills-index.json — run scripts/gen-index.sh --write"
