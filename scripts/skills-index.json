@@ -349,9 +349,9 @@
       "vendored": false,
       "source": "open-skills",
       "scripts": [
+        "skills/video-and-media-production/broll-pipeline/Root.tsx",
         "skills/video-and-media-production/broll-pipeline/index.ts",
         "skills/video-and-media-production/broll-pipeline/orchestrate.sh",
-        "skills/video-and-media-production/broll-pipeline/Root.tsx",
         "skills/video-and-media-production/broll-pipeline/visual-contract.tsx"
       ]
     },

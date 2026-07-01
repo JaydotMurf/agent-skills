@@ -38,9 +38,10 @@ while IFS= read -r skill; do
   vendored=false
   [[ "$standard" == *upstream-vendored* ]] && vendored=true
   # helper scripts living directly beside this SKILL.md (not nested sub-skills)
+  # jq 'sort' is codepoint-based and locale-independent, unlike shell sort.
   scripts_json="$(find "$dir" -maxdepth 1 -type f \
       \( -name '*.sh' -o -name '*.py' -o -name '*.ts' -o -name '*.tsx' \) \
-      | sort | jq -R . | jq -s .)"
+      | jq -R . | jq -s 'sort')"
   objects+=("$(jq -n \
     --arg name "$name" --arg path "$skill" --arg category "$category" \
     --argjson vendored "$vendored" \
