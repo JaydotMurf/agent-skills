@@ -49,8 +49,10 @@ while IFS= read -r skill; do
       source:(if $source=="" then null else $source end), scripts:$scripts}')")
 done < <(find skills -name SKILL.md | sort)
 
+# sort_by(.path) makes the array order canonical regardless of the locale that
+# `sort` used above, so a fresh generation matches byte-for-byte across machines.
 manifest="$(printf '%s\n' "${objects[@]}" | jq -s \
-  '{generated_by:"scripts/gen-index.sh", count:length, skills:.}')"
+  '{generated_by:"scripts/gen-index.sh", count:length, skills:(sort_by(.path))}')"
 
 if [[ "${1:-}" == "--write" ]]; then
   printf '%s\n' "$manifest" > scripts/skills-index.json

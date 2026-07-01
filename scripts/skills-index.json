@@ -386,6 +386,14 @@
       ]
     },
     {
+      "name": "frontend-taste",
+      "path": "skills/web-publishing-and-frontend/frontend-taste/SKILL.md",
+      "category": "web-publishing-and-frontend",
+      "vendored": false,
+      "source": "open-skills",
+      "scripts": []
+    },
+    {
       "name": "data-dense-dashboard",
       "path": "skills/web-publishing-and-frontend/frontend-taste/data-dense-dashboard/SKILL.md",
       "category": "web-publishing-and-frontend",
@@ -412,14 +420,6 @@
     {
       "name": "redesign-existing",
       "path": "skills/web-publishing-and-frontend/frontend-taste/redesign-existing/SKILL.md",
-      "category": "web-publishing-and-frontend",
-      "vendored": false,
-      "source": "open-skills",
-      "scripts": []
-    },
-    {
-      "name": "frontend-taste",
-      "path": "skills/web-publishing-and-frontend/frontend-taste/SKILL.md",
       "category": "web-publishing-and-frontend",
       "vendored": false,
       "source": "open-skills",
