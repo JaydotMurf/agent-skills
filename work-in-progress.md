@@ -2,7 +2,7 @@
 
 A living development map of the agent-skills project: what it is, what is built, what is underway, and where it is going. This file is the single source of truth for project state and is the basis from which the public README will be written before go-live.
 
-Last updated: 2026-06-30 (main at the merge of PR #10).
+Last updated: 2026-07-01 (main at the merge of PR #13).
 
 ---
 
@@ -26,7 +26,7 @@ Three properties define the project:
 
 ### Skill primitives
 
-The core feature is the skill itself: a self-contained folder holding a `SKILL.md` that any agent harness can load by name. Each skill follows a six-element authoring standard — frontmatter, a trigger description, numbered steps, a "Never..." guardrail, an output contract, and a verification standard — so behavior is predictable and checkable. The library currently holds 54 skill folders across eight functional categories.
+The core feature is the skill itself: a self-contained folder holding a `SKILL.md` that any agent harness can load by name. Each skill follows a six-element authoring standard — frontmatter, a trigger description, numbered steps, a "Never..." guardrail, an output contract, and a verification standard — so behavior is predictable and checkable. The library currently holds 58 skill folders across eight functional categories (39 native and 19 vendored), counting the four nested `frontend-taste` sub-skills.
 
 ### Runbook compositions
 
@@ -97,7 +97,7 @@ agent-skills/
 │   ├── SKILL-TEMPLATE.md
 │   └── RUNBOOK-TEMPLATE.md
 │
-├── skills/                         # 8 categories, 54 skill folders
+├── skills/                         # 8 categories, 58 skill folders (39 native + 19 vendored)
 │   ├── core-infrastructure/        # README + 5 skills
 │   │   ├── current-info-search/    # SKILL.md + search.sh
 │   │   ├── heavy-file-ingestion/   # SKILL.md + ingest.sh
@@ -120,7 +120,7 @@ agent-skills/
 │   │   ├── my-voice/
 │   │   └── release-briefing/
 │   │
-│   ├── web-publishing-and-frontend/ # README + 6 leaf skills
+│   ├── web-publishing-and-frontend/ # README + 10 leaf SKILL.md (6 top-level; frontend-taste = core + 4 nested)
 │   │   ├── frontend-taste/         # SKILL.md + 4 nested sub-skills + examples/
 │   │   │   ├── minimalist-editorial/
 │   │   │   ├── data-dense-dashboard/
@@ -369,14 +369,15 @@ Status legend: ✅ complete and verified. Verification method is noted because s
 
 ## 5. Work In Progress
 
-Ordered for a safe, methodical workflow: validate paid and hardware paths, then extend automated quality, then take on the larger phase-2 build, and finish with the public README. The correctness, hygiene, and CI items are done (see Work Completed).
+Ordered for a safe, methodical workflow: validate paid and hardware paths, then build the quality-test system, then take on the larger phase-2 build, and finish with the public README. The correctness, hygiene, and CI items are done (see Work Completed).
 
-1. Live-validate the deferred paid paths in priority order, recording real cost and output shape in each `SKILL.md`: image generation (image-gateway, then the two arena/gallery composers), then a Resend live send (stakeholder-update-email), then a current-info-search live query re-confirm. Blocked on real API keys and explicit spend approval.
-2. Live-validate the hardware and render paths: a radio-edit EDL imported into an NLE, a broll-pipeline end-to-end render, and an nle-assistant round-trip against DaVinci Resolve Studio. Blocked on local media hardware and toolchains.
-3. Add a Remotion typecheck for `broll-pipeline/index.ts` and the `.tsx` set, which are not type-checked in this repo today (no Remotion toolchain present); wire it into CI once the toolchain is available.
-4. Begin native adoption of vendored skills where it pays off: pick the highest-traffic vendored skills, bring each to the six-element standard, drop its `standard: upstream-vendored` marker, and remove its row from `docs/vendored-conformance.md`.
-5. Build the phase-2 per-harness adapter and generation layer: flatten canonical `SKILL.md` into each harness's expected location and generate per-tool rule files (Claude Code, Codex, Cursor, Gemini) from the single canonical source.
-6. Draft the final public README from this file once the above stabilize, framing the library for first-time veteran and GovTech users.
+1. Live-validate the deferred paid paths, recording real cost and output shape in each `SKILL.md`. Active as of 2026-07-01: keys for OpenRouter, Perplexity, and AssemblyAI are present in `~/.config/agent-skills/.env` and a ~$15–20 spend ceiling is approved, so the block is lifted for cheapest-first validation — a current-info-search live re-confirm, a media-transcription short clip, an image-gateway generation on the default model plus a second model to exercise `IMAGE_GATEWAY_MODEL`, then small real runs of the image-model-arena and essay-illustration-gallery composers. The Resend live send (stakeholder-update-email) is unblocked once a `STAKEHOLDER_UPDATE_EMAIL_API_KEY` is added.
+2. Build the tiered quality-test system (Tier 1 deterministic CI gate over every skill, Tier 2 budget-gated LLM-judge evals for the highest-value skills and all 7 runbooks, Tier 3 the live-path verification ledger fed by item 1). See the Work Completed subsection once it lands.
+3. Live-validate the hardware and render paths: a radio-edit EDL imported into an NLE, a broll-pipeline end-to-end render, and an nle-assistant round-trip against DaVinci Resolve Studio. Blocked on local media hardware and toolchains.
+4. Add a Remotion typecheck for `broll-pipeline/index.ts` and the `.tsx` set, which are not type-checked in this repo today (no Remotion toolchain present); wire it into CI once the toolchain is available.
+5. Begin native adoption of vendored skills where it pays off: pick the highest-traffic vendored skills, bring each to the six-element standard, drop its `standard: upstream-vendored` marker, and remove its row from `docs/vendored-conformance.md`.
+6. Build the phase-2 per-harness adapter and generation layer: flatten canonical `SKILL.md` into each harness's expected location and generate per-tool rule files (Claude Code, Codex, Cursor, Gemini) from the single canonical source.
+7. Draft the final public README from this file once the above stabilize, framing the library for first-time veteran and GovTech users.
 
 ---
 
